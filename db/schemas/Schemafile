@@ -1,0 +1,5 @@
+require "shops.schema"
+require "customers.schema"
+require "products.schema"
+require "orders.schema"
+require "order_items.schema"

@@ -1,0 +1,10 @@
+create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  t.string :name, null: false
+  t.string :phone, null: false
+  t.text :address, null: false
+  t.text :note
+
+  t.timestamps
+
+  add_index :customers, :phone, unique: true
+end

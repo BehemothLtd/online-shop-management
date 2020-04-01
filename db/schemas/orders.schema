@@ -1,0 +1,21 @@
+create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  t.integer :shop_id, null: false
+  t.string :number, null: false
+  t.string :status
+  t.string :customer_id, null: false
+  t.integer :total, null: false
+  t.integer :shipping_fee, default: 0
+  t.string :shipper_name
+  t.string :shipper_phone
+  t.string :receiver_phone, null: false
+  t.string :receiver_address, null: false
+  t.text :note
+  
+  t.datetime :ordered_at, null: false
+  t.datetime :done_at
+  t.datetime :canceled_at
+
+  t.timestamps
+
+  add_index :orders, :number, unique: true
+end
