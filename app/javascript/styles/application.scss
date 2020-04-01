@@ -1,0 +1,17 @@
+@import "./material-dashboard";
+@import '~bootstrap/scss/bootstrap';
+@import './order-table.scss';
+
+.badge {
+  font-size: 15px;
+}
+
+.error {
+  margin: 5px 0;
+  display: block;
+  background: #ffc4c4;
+  color: #e2574c;
+  padding: 10px;
+  width: 100%;
+}
+// application components

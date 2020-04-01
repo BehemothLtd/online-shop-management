@@ -1,0 +1,35 @@
+<div class="sidebar" data-color="green" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+  <div class="logo">
+    <a href="/" class="simple-text logo-normal">
+      <i class="fa fa-home" aria-hidden="true">HOME</i>
+    </a>
+  </div>
+  <div class="sidebar-wrapper">
+    <ul class="nav">
+      <li class="nav-item <%= active_class('dashboard', 'index') %>">
+        <a class="nav-link" href="/">
+          <i class="fa fa-tachometer" aria-hidden="true"></i>
+          <p>Dashboard</p>
+        </a>
+      </li>
+      <li class="nav-item  <%= active_class('customers') %>">
+        <a class="nav-link" href="/customers">
+          <i class="fa fa-address-book" aria-hidden="true"></i>
+          <p>Customer</p>
+        </a>
+      </li>
+      <li class="nav-item  <%= active_class('products') %>">
+        <a class="nav-link" href="/products">
+         <i class="fa fa-product-hunt" aria-hidden="true"></i>
+          <p>Product</p>
+        </a>
+      </li>
+      <li class="nav-item  <%= active_class('orders') %>">
+        <a class="nav-link" href="/orders">
+         <i class="fa fa-product-hunt" aria-hidden="true"></i>
+          <p>Orders</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

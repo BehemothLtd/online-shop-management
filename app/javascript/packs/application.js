@@ -9,6 +9,21 @@ require("@rails/activestorage").start()
 require("channels")
 
 
+import 'bootstrap/dist/js/bootstrap';
+import 'bootstrap'
+
+import Vue from 'vue/dist/vue.esm';
+import '../styles/application';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const app = document.getElementById("app");
+
+  const vue = new Vue({
+    el: "#app",
+    components: {
+    }
+  });
+});
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.

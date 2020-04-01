@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>OnlineShopManagement</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>OnlineShopManagement</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
 
   <body>
-    <%= yield %>
+    <div class="wrapper" id="app">
+      <% if shop_signed_in? %>
+        <%= render "layouts/shared/sidebar" %>
+        <div class="main-panel">
+          <%= render "layouts/shared/navbar" %>
+          
+          <div class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <%= render "layouts/shared/alert" %>
+                  <%= yield %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <%= render "layouts/shared/footer" %> -->
+        </div>
+      <% else %>
+        <%= render "layouts/shared/alert" %>
+        <%= yield %>
+      <% end %>
+    </div>
   </body>
+
 </html>
