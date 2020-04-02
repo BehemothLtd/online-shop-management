@@ -1,0 +1,38 @@
+
+<div class="card">
+  <div class="card-header card-header-success">
+    <h4 class="card-title ">Product list</h4>
+    <p class="card-category"></p>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table">
+        <thead class=" text-primary">
+          <tr>
+            <th width="5%">ID</th>
+            <th width="20%">Code</th>
+            <th width="30%">Name</th>
+            <th width="20%">Price</th>
+            <th width="20%">Unit</th>
+            <th width="10%">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @products.each do |product| %>
+          <tr>
+            <td><%= product.id %></td>
+            <td><%= product.code %></td>
+            <td><%= product.name %></td>
+            <td><%= product.price %></td>
+            <td><%= product.unit %></td>
+            <td>
+              <%= link_to raw('<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'), edit_product_path(product.id)%>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%== pagy_bootstrap_nav(@pagy) %>

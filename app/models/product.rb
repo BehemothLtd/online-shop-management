@@ -17,4 +17,12 @@
 #
 
 class Product < ApplicationRecord
+  after_create :generate_random_number
+
+  belongs_to :shop, optional: true
+
+  def generate_random_number
+    self.code = Digest::SHA256.hexdigest("#{shop.id}#{id}")[0..9]
+    save!
+  end
 end

@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+
   def active_class(controller, action = nil)
     return "" unless controller_name == controller
 
