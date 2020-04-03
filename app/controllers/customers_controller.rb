@@ -2,6 +2,7 @@ class CustomersController < ApplicationController
   include Pagy::Backend
 
   def index
+    array =[1,2]
     @q = Customer.where(shop_id: current_shop.id).order(id: :desc).ransack(params[:q])
     @pagy, @customers = pagy(@q.result(distinct: true), items: params[:per_page] || 20)
   end
