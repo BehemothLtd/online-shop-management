@@ -9,6 +9,7 @@
 #  phone      :string(255)      not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  shop_id    :integer          not null
 #
 # Indexes
 #

@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-header card-header-success">
+    <h4 class="card-title">Customer manger</h4>
+    <p class="category">
+    </p>
+  </div>
+  <div class="card-body">
+    <%= search_form_for @q do |f| %>
+
+
+    <div class="form-row col-md-12">
+      <div class="col form-group">
+        <%= f.label :phone_cont %>
+        <%= f.search_field :phone_cont, class: "form-control" %>
+      </div>
+
+      <div class="col form-group">
+        <%= f.label :name_cont %>
+        <%= f.search_field :name_cont, class: "form-control" %>
+      </div>
+
+
+    </div>
+
+    <div class="form-row col-md-12" style="display: flex; justify-content: space-between;">
+      <%= f.submit 'Search', class: 'btn btn-primary' %>
+      <%= link_to 'New', new_customer_path , class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>

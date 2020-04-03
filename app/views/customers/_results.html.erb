@@ -1,0 +1,36 @@
+
+<div class="card">
+  <div class="card-header card-header-success">
+    <h4 class="card-title ">Customer list</h4>
+    <p class="card-category"></p>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table">
+        <thead class=" text-primary">
+          <tr>
+            <th width="5%">ID</th>
+            <th width="30%">Name</th>
+            <th width="30%">Phone</th>
+            <th width="20%">Address</th>
+            <th width="10%">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @customers.each do |customer| %>
+          <tr>
+            <td><%= customer.id %></td>
+            <td><%= customer.name %></td>
+            <td><%= customer.phone %></td>
+            <td><%= customer.address %></td>
+            <td>
+              <%= link_to raw('<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'), edit_customer_path(customer.id)%>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%== pagy_bootstrap_nav(@pagy) %>
