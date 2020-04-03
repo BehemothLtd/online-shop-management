@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 2020_04_01_120853) do
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "shop_id", null: false
-    t.string "number", null: false
-    t.string "status"
-    t.string "customer_id", null: false
+    t.string "code", null: false
+    t.integer "status", null: false
+    t.integer "customer_id", null: false
     t.integer "total", null: false
     t.integer "shipping_fee", default: 0
     t.string "shipper_name"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2020_04_01_120853) do
     t.datetime "canceled_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["number"], name: "index_orders_on_number", unique: true
+    t.index ["code"], name: "index_orders_on_code", unique: true
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
