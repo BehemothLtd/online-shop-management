@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const vue = new Vue({
     el: "#app",
     components: {
+      OrderNew: () => import("../src/Components/Orders/New.vue"),
     }
   });
 });
